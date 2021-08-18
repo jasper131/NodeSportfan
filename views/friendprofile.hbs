@@ -1,0 +1,121 @@
+{{> header}}
+<main>
+    {{log user}}
+    <section id="landing-page">
+        <div class="container mt-5">
+            <div class="row mb-5">
+                <div class="col-md-4 hidden-mobile mb-5">
+                    <div> {{> sidenav}}</div>
+                </div>
+                <div class="col-lg-8 col-12">
+                    <div class="profile-section mb-5">
+                        <div class="profile-img card">
+                            <div class="img-text ">
+                                <img src="img/bg-img.jpg" class="img-fluid">
+                            </div>
+                            <div class="profile-picture ">
+                                <a href="#">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="profile-text mb-3">
+                                <h5 id="user-full-name" class="">{{user.name}}</h5>
+                                <h6><span id="user-profile-status">{{user.status}}</span> ( <span id="user-profile-club">{{ user.club }}</span> )</h6>
+                            
+                            </div>
+                            <div class="profile-text m-0">
+                                <div class="">
+                                    <p id="simple-quotes">{{ user.profiles.favoriteQuote}}</p>
+                                    <p><span> <i class="fa fa-map-marker" id="location-profile"></i> {{user.address}}</span>
+                                        <span> <i class="fa fa-calendar ml-11" id="date-joined"></i> Joined August 2019</span></p>
+                                </div>
+                                <div>
+                                    <p><span><b>99</b> Followers</span>
+                                        <span class="ml-11 "><b>50</b> Following</span></p>
+                                </div>
+                            </div>
+                            <div class="button-box">
+                                {{#if_eq user.following true }}
+                                <button class="btn btn-primary pull-right" id="follow-box" onclick="unFollowUser(`{{user.uuid}}`)">UnFollow</button>
+                                 {{else}}
+                                 <button class="btn btn-primary pull-right" id="follow-box" onclick="followUser(`{{user.uuid}}`)">Follow</button>
+                                {{/if_eq}}
+                            </div>
+
+                        </div>
+        </div>
+                    <ul class="friend mt-5 nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="post-tab" data-toggle="tab" href="#post" role="tab"
+                                aria-controls="post" aria-selected="true">Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="media-tab" data-toggle="tab" href="#media" role="tab" aria-controls="media"
+                                aria-selected="false">Media</a>
+                        </li>
+                    </ul>
+                    <div class="card card-taps mb-5">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="post" role="tabpanel" aria-labelledby="post-tab">
+                                {{#each user.posts}}
+                              
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <img src="img/4.jpg" class="img-prof">
+                                        </div>
+                                        <div class="ml-2">
+                                            <h4 class="fan-name">{{this.owner_name}}<span class="fan-fn"> <br>Player</span><br>
+                                                <p class="fan-fn">Arsenal</p> <span class="fan-time">10(s) ago</span>
+                                            </h4>
+                                            <p class="comment-p">{{this.post}}</p>
+                                            <div class="img-boxz">
+                                                {{{this.media}}}
+                                            </div>
+                                            
+                                        </div>
+                                
+                                    </div>
+                                    <div class="tap-content-post">
+                                        <div class="d-flex justify-content-between m-bd">
+                                            <p class="p-2 text-center">
+                                                <i class="fa fa-thumbs-up"></i> Like
+                                            </p>
+                                            <p class="p-2 text-right">
+                                                <i class="fa fa-comments"></i> Comment
+                                            </p>
+                                            <p class="p-2 text-right">
+                                                <i class="fa fa-share-alt"></i> Share
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                               
+                                {{/each}}
+                            </div>
+                           
+                            <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="media-tab">
+                                {{#each user.posts}}
+                                <div>{{{this.media}}}</div>
+                                {{/each}}
+                            </div>
+                           
+                        </div>
+                          {{!-- {{/each}} --}}
+
+                    </div>
+                    {{!-- check here --}}
+                    {{!-- <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="media-tab">
+                           {{#each user.posts}}
+                            <div>{{{this.media}}}</div>
+                              {{/each}}
+                    </div> --}}
+                    {{!-- <div class="tab-pane fade" id="pages" role="tabpanel" aria-labelledby="pages-tab">...</div>
+                    <div class="tab-pane fade" id="like" role="tabpanel" aria-labelledby="like-tab">...</div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+

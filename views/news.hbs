@@ -1,0 +1,112 @@
+{{> header}}
+
+
+
+<main>
+    {{log  data}}
+    <section id="landing-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+                    {{> sidenav}}
+
+                </div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <h5 class="section-title">News</h5>
+
+                        <hr>
+
+                    <div class="col-md-12 featured-news">   
+                            {{#each data.articles }}
+                            {{#if @last}}
+                            <div class="d-flex featured-newss">
+                                <div class="news-image">
+                                    <img src="{{this.urlToImage}}" alt="a player" class="img-fluid">
+                                </div>
+                                <div class="news-content ml-2">
+                                    <h4>{{ this.title }}
+                                    </h4>
+                                    <p>{{ this.description }}</p>
+                                    <p class="btn btn-primary" onclick="showNewsDetails(`{{this.title}}`)">Read</p>
+                                </div>
+                                {{!-- <div class="d-flex justify-content-between mt-3">
+                                   
+                                </div> --}}
+
+                            </div>
+                            {{/if}}
+                            {{/each}}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                {{#each_upto data.articles 6 }}
+                                <div class="short-news">
+                                    <div class="news-image">
+                                        <img src="{{this.urlToImage}}" alt="a player" class="img-fluid">
+                                    </div>
+                                    <div class="news-heading">
+                                        <p>{{ this.title }}</p>
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <p class="btn btn-primary" onclick="showNewsDetails(`{{this.title}}`)">Read</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each_upto}}
+                                {{!-- <div class="short-news">
+                                    <div class="news-image">
+                                        <img src="img/bg-img.jpg" alt="a player" class="img-fluid">
+                                    </div>
+                                    <div class="news-heading">
+                                        <p>BLOW West Ham still waiting on Ngakia contract decision amid reports defender could leave.</p>
+                                    </div>
+                                </div> --}}
+                            </div>
+                            <div class="col-md-5" id="right">
+                                {{#each data.articles }}
+                                <div class="d-flex">
+                                    <div class="news-image">
+                                        <img src="{{this.urlToImage}}" alt="a player" class="img-fluid">
+                                    </div>
+                                    <div class="news-heading ml-2">
+                                        <p>{{ this.title }}</p>
+                                        <p class="" onclick="showNewsDetails('{{this.title}}')">{{ this.description }}
+                                        </p>
+                                    </div>
+                                </div>
+                                {{/each }}
+
+                                <div class="d-flex">
+                                    <div class="news-image">
+                                        <img src="img/bg-img.jpg" alt="a player" class="img-fluid">
+                                    </div>
+                                    <div class="news-heading ml-2">
+                                        <p>BLOW West Ham still waiting on Ngakia contract decision amid reports defender
+                                            could leave.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="news-image">
+                                        <img src="img/bg-img.jpg" alt="a player" class="img-fluid">
+                                    </div>
+                                    <div class="news-heading ml-2">
+                                        <p>BLOW West Ham still waiting on Ngakia contract decision amid reports defender
+                                            could leave.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+
+                        {{!-- <section class="see-more">
+                            <a href="#" class="pull-right">See more</a>
+                        </section> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>

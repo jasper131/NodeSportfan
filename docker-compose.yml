@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgres-server:
+    image: postgres
+  node-app:
+    restart: always
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    build: 
+      context: .
+    volumes:
+      # volumes helps to track changes in the container source code
+      # here we are create volumes 
+      # here we map the current folder to the app folder in the container
+      - .:/app  

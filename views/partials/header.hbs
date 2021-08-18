@@ -1,0 +1,73 @@
+<!-- nav -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+ <div class="container">
+    <a href="/" class="navbar-brand">FifaFan</a>
+      <a href="#" class="mx-2 user" id="user-name-header"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse " id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/message">Friends </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Rooms
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu{-sm|-md|-lg|-xl}-left"
+              aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/rooms">Search Rooms</a>
+              <div class="divider"> </div>
+              <a class="dropdown-item" href="/create_room">Create Room</a>
+              <div class="divider"> </div>
+              <a class="dropdown-item" href="/rooms">My Rooms</a>
+              <div class="divider"> </div>
+              <a class="dropdown-item" href="/rooms">List Rooms</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/news">News</a>
+          </li>
+          <div class="border-left"></div>
+          <li class="nav-item">
+              <a class="nav-link" href="/"><i class="fa fa-home"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/message"><i class="fa fa-comments"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/create_room"><i class="fa fa-plus-square"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/notification"><i class="fa fa-bell"></i></a>
+            </li>
+          <div class="border-left"></div>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+
+            </a>
+            <div class="dropdown-menu dropdown-menu-right  dropdown-menu{-sm|-md|-lg|-xl}-left" data-display="static"
+              aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/rooms">Search Rooms</a>
+               <div class="divider"> </div>
+              <a class="dropdown-item" href="/create_room">Create Room</a>
+               <div class="divider"> </div>
+              <a href="/rooms" class="dropdown-item drop-down" id="list-rooms"> List Rooms </a>
+               <div class="divider"> </div>
+              <a href="#" class="dropdown-item" id="user-rooms"> My Rooms </a></div>
+          </li>
+          <li class="nav-item" id="logout_user">
+            <a class="nav-link" >logout</a>
+          </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href="/signup">Signup</a>
+          </li> --}}
+        </ul>
+      </div>
+</div> 
+</nav>
+<!-- end of nav -->
